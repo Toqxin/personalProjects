@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical System</title>
+    <link rel="icon" href="images/hospital-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="main-page">
+            <div class="left-page">
+                <div class="dashboard">
+                    <h1>Dashboard</h1>
+                    <hr>
+                    <div class="dashboard-content">
+                        <ul>
+                            <li>About</li>
+                            <li>Doctors</li>
+                            <li>Patients</li>
+                            <li>Polyclinics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-page">
+                <div class="content-right-page">
+                    <div class="first-page pages">
+                        <h1>Medical System</h1>
+                    </div>
+                    <div class="about-page pages">
+                        <div class="doctors-count boxes">
+                            <h3 id="d-count"></h3>
+                            <h3>Doctors</h3>
+                            <img src="images/doctor.png" alt="">
+                        </div>
+                        <div class="patients-count boxes">
+                            <h3 id="p-count"></h3>
+                            <h3>Patients</h3>
+                            <img src="images/patient.png" alt="">
+                        </div>
+                        <div class="polyclinics-count boxes">
+                            <h3 id="ply-count">25</h3>
+                            <h3>Polyclinics</h3>
+                            <img src="images/polyclinic.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="doctors-page pages">
+                        <div class="for-search-add">
+                            <input type="text" name="" id="doctor-name-input" placeholder="search the doctor...">
+                            <div class="add-doctor-btn">+</div>
+                        </div>
+                        <div class="doctors-cards-div">
+                            
+                        </div>
+                    </div>
+                    <div class="patients-page pages">
+                        <div class="for-add-search">
+                            <input type="text" name="" id="patient-name-input" placeholder="search the patient...">
+                            <div class="add-patient-btn">+</div>
+                        </div>
+
+                        <div class="patients-cards-div">
+                            <div class="patient-card-head">
+                                <ul id="patient-ul">
+                                    <li>Id</li>
+                                    <li>Patient</li>
+                                    <li>Polyclinic</li>
+                                    <li>Doctor</li>
+                                    <li>Date</li>
+                                </ul>
+                                <hr>
+                            </div>
+                            <div class="patient-balloon">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="polyclinics-page pages">
+                        <div class="polyclinic-contents">
+                            <div class="cln-1 clinics">Cardiology</div>
+                            <div class="cln-2 clinics">Pulmonology</div>
+                            <div class="cln-3 clinics">Gastroenterology</div>
+                            <div class="cln-4 clinics">Nephrology</div>
+                            <div class="cln-5 clinics">Endocrinology</div>
+                            <div class="cln-6 clinics">Oncology</div>
+                            <div class="cln-7 clinics">Rheumatology</div>
+                            <div class="cln-8 clinics">Infectious Diseases</div>
+                            <div class="cln-9 clinics">Dermatology</div>
+                            <div class="cln-10 clinics">Neurology</div>
+                            <div class="cln-11 clinics">Psychiatry</div>
+                            <div class="cln-12 clinics">Orthopedics and Traumatology</div>
+                            <div class="cln-13 clinics">Physical Therapy and Rehabilitation</div>
+                            <div class="cln-14 clinics">Ophthalmology</div>
+                            <div class="cln-15 clinics">Otolaryngology</div>
+                            <div class="cln-16 clinics">Obstetrics and Gynecology</div>
+                            <div class="cln-17 clinics">Pediatrics</div>
+                            <div class="cln-18 clinics">Urology</div>
+                            <div class="cln-19 clinics">General Surgery</div>
+                            <div class="cln-20 clinics">Plastic, Reconstructive and Aesthetic Surgery</div>
+                            <div class="cln-21 clinics">Emergency Medicine</div>
+                            <div class="cln-22 clinics">Family Medicine</div>
+                            <div class="cln-23 clinics">Psychology</div>
+                            <div class="cln-24 clinics">Dietitian</div>
+                            <div class="cln-25 clinics">Internal Medicine</div>
+                        </div>
+                        <div class="under-content">
+                            <h1>Doctors</h1>
+                            <label id="polyclinic-label"></label>
+                            <hr>
+                            <ul id="under-doctors">
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="alert-container" id="alert-container">
+                <form id="add-doctor-form">
+                    <label for="doctor-id">ID:</label>
+                    <input type="text" id="doctor-id" placeholder="Enter doctor ID">
+                    <label for="doctor-name">Name:</label>
+                    <input type="text" id="doctor-name" placeholder="Enter doctor name">
+                    <label for="doctor-surname">Surname:</label>
+                    <input type="text" id="doctor-surname" placeholder="Enter doctor surname">
+                    <label for="doctor-department">Department:</label>
+                    <select id="doctor-department-dropdown">
+                        
+                    </select>
+                    <button type="submit" id="add-alert">Add</button>
+                    <button type="button" id="close-alert">Close</button>
+                </form>
+            </div>    
+
+            <div class="alert-container-patient" id="alert-container-patient">
+                <form id="add-patient-form">
+                    <label for="patient-id">ID:</label>
+                    <input type="text" id="patient-id" placeholder="Enter patient ID">
+                    <label for="patient-name">Patient:</label>
+                    <input type="text" id="patient-name" placeholder="Enter patient name">
+                    <label for="patient-polyclinic">Polyclinic:</label>
+                    <input type="text" id="patient-polyclinic" placeholder="Enter patient polyclinic" readonly>
+                    <label for="patient-doctor">Doctor:</label>
+                    <select id="patient-doctor-dropdown">
+                        
+                    </select>
+                    <label for="patient-date">Date:</label>
+                    <input type="date" id="patient-date">
+                    <button type="submit" id="add-alert-patient">Add</button>
+                    <button type="button" id="close-alert-patient">Close</button>
+                </form>
+            </div>
+
+            <div class="alert-container-update-patient" id="alert-container-update-patient">
+                <form id="update-patient-form">
+                    <label for="patient-id">ID:</label>
+                    <input type="text" id="update-patient-id" placeholder="Enter patient ID" readonly disabled>
+                    <label for="patient-name">Patient:</label>
+                    <input type="text" id="update-patient-name" placeholder="Enter patient name">
+                    <label for="patient-polyclinic">Polyclinic:</label>
+                    <input type="text" id="update-patient-polyclinic" placeholder="Enter patient polyclinic" readonly disabled>
+                    <label for="patient-doctor">Doctor:</label>
+                    <input type="text" id="update-patient-doctor" placeholder="Enter doctor name" readonly disabled>
+                    <label for="patient-date">Date:</label>
+                    <input type="date" id="update-patient-date">
+                    <button type="submit" id="update-alert-patient">Update</button>
+                    <button type="button" id="close-alert-update-patient">Close</button>
+                </form>
+            </div>
+             
+        </div>
+    </div>
+
+    <div class="notification">
+        <p>This page can only be viewed on screens larger than 1910 pixels wide.</p>
+    </div>
+
+    <script src="domevents.js"></script>
+    <script type="module" src="patient.js"></script>
+    <script type="module" src="doctorinfos.js"></script>
+</body>
+</html>

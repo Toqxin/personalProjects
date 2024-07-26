@@ -1,0 +1,641 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    scrollbar-width: none;
+}
+
+body {
+    -ms-overflow-style: none;
+    overflow-y: scroll;
+}
+
+.main-page{
+    display: flex;
+}
+
+.left-page{
+    width: 20%;
+}
+
+.dashboard{
+    height: 100vh;
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(51,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    padding: 50px;
+    position: fixed;
+    border-right: 5px solid black;
+    z-index: 1;
+}
+
+.dashboard h1{
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+}
+
+.dashboard hr{
+    border: 3px solid white;
+}
+
+.dashboard-content{
+    margin-top: 10px;
+}
+
+.dashboard-content li.active {
+    background-color:darkorange;
+    cursor: pointer;
+    font-weight: bolder;
+    transform: scale(1.1);
+    color:cyan;
+}
+
+
+.dashboard-content li{
+    list-style: none;
+    font-size: 24px;
+    margin-top: 15%;
+    background-color: aliceblue;
+    cursor: pointer;
+    padding: 6%;
+    border: 3px solid black;
+    border-radius: 30px;
+    transition: .1s linear;
+}
+
+.dashboard-content li:hover{
+    background-color:darkorange;
+}
+
+.right-page{
+    width: 100%;
+    position: relative;
+}
+
+.content-right-page{
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.first-page{
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background:url('images/hospital.jpg');
+    
+}
+
+.first-page h1{
+    font-size: 200px;
+    -webkit-text-stroke-width: 7px; 
+    -webkit-text-stroke-color: black;
+    color:rgba(0, 51, 203, 0.5);
+}
+
+.about-page {
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: space-around;
+    padding: 100px;
+    position: relative; 
+}
+
+.about-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/hospital.jpg') no-repeat center center;
+    background-size: cover;
+    filter: blur(5px);
+    z-index: -1; 
+}
+
+.boxes {
+    display: flex;
+    width: 20%;
+    height: 150px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    background-color:steelblue;
+    color: white;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    z-index: 1;
+    -webkit-text-stroke-width: 1px; 
+    -webkit-text-stroke-color: black;
+    padding: 100px;
+}
+
+.boxes h3{
+    margin: 5%;
+    font-size: 30px;
+}
+
+.boxes img{
+    width: 80px;
+}
+
+.doctors-page{
+    display: flex;
+    flex-direction: column;
+    background-color:lightblue;
+    min-height: 100vh;
+}
+
+.for-search-add{
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    padding:20px;
+    position: fixed;
+}
+
+.for-search-add input{
+    width: 30%;
+    height: 40px;
+    font-size: 22px;
+    margin-right: 20px;
+    border: 3px solid black;
+    border-radius: 16px;
+    padding: 20px;
+    outline: none;
+}
+
+.add-doctor-btn{
+    background-color:green;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 3px solid black;
+    border-radius: 16px;
+    transition: .1s linear;
+}
+
+.add-doctor-btn:hover{
+    background-color:lightgreen;
+}
+
+.doctor-card{
+    width: 400px;
+    height: 600px;
+    background-color:powderblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 0 40px 40px 40px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -5px 0px inset;
+    border-radius: 16px;
+}
+
+.doctor-card img{
+    width: 300px;
+    border: 10px solid black;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: skyblue;
+}
+
+.doctor-name{
+    font-size: 24px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.doctor-department{
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.doctor-card-head{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.card-delete{
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: red;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid black;
+    border-radius: 15px;
+    transition: .1s linear;
+}
+
+.card-delete:hover{
+    color: white;
+}
+
+.doctors-cards-div{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10%;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+.alert-container {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+#add-doctor-form {
+    width: 40%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+#add-doctor-form label {
+    display: block;
+    margin-top: 10px;
+}
+
+#add-doctor-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#doctor-department-dropdown{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#add-doctor-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#close-alert {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#add-alert{
+    background-color: cornflowerblue;
+    color: white;
+}
+
+.patients-page{
+    display: flex;
+    flex-direction: column;
+    background-color: powderblue;
+    min-height: 100vh;
+}
+
+.for-add-search{
+    display: flex;
+    justify-content:space-between;
+    padding: 20px 20px 20px 50px;
+}
+
+.for-add-search input{
+    width: 30%;
+    height: 40px;
+    font-size: 24px;
+    padding: 20px;
+    border: 3px solid black;
+    border-radius: 16px;
+    outline: none;
+}
+
+.add-patient-btn{
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border: 3px solid black;
+    width: 60px;
+    border-radius: 16px;
+    background-color: green;
+    transition: .1s linear;
+    cursor: pointer;
+}
+
+.add-patient-btn:hover{
+    background-color:lightgreen;
+}
+
+#patient-ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+    padding: 20px;
+    width: 80%;
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 50px;
+}
+
+.patient-card-head hr{
+    margin: 0 20px 0 20px;
+}
+
+.patients-cards-div{
+    padding-bottom: 30px;
+    padding-left: 100px;
+}
+
+.balloons ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: space-between;
+    width: 95%;
+    font-size: 19px;
+    padding: 10px;
+    border: 3px solid black;
+    margin: 20px 0 0 0;
+    border-radius: 16px;
+    background-color:snow;
+    transition: .1s linear;
+    cursor: pointer;
+}
+
+.balloons ul:hover{
+    background-color:burlywood;
+}
+
+#delete-balloons{
+    width: 50px;
+    background-color: red;
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 16px;
+}
+
+#delete-balloons:hover{
+    color: white;
+}
+
+.alert-container-patient {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+#add-patient-form {
+    width: 40%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+#add-patient-form label {
+    display: block;
+    margin-top: 10px;
+}
+
+#add-patient-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#patient-doctor-dropdown{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#add-patient-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#close-alert-patient {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#add-alert-patient{
+    background-color: cornflowerblue;
+    color: white;
+}
+
+.polyclinic-contents{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+
+.clinics{
+    width: 20%;
+    background-color: aliceblue;
+    font-size: 20px;
+    border: 2px solid black;
+    padding: 20px;
+    cursor: pointer;
+    transition: .1s ease;
+}
+
+.clinics:hover{
+    background-color:gray;
+    color: white;
+}  
+
+.polyclinics-page{
+    display: flex;
+    flex-direction: column;
+    background-color: powderblue;
+    height: 100vh;
+}
+
+.under-content{
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.under-content hr{
+    width: 100%;
+    margin-top: 10px;
+}
+
+#under-doctors{
+    list-style: none;
+    font-size: 20px;
+}
+
+#under-doctors li{
+    margin-top: 20px;
+    padding: 10px;
+    border-bottom: 3px solid black;
+    width: 20%;
+    background-color:steelblue;
+    outline: none;
+    color: white;
+}
+
+.clinics.active{
+    background-color: gray;
+    color: white;
+}
+
+.alert-container-update-patient {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+#update-patient-form {
+    width: 40%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+#update-patient-form label {
+    display: block;
+    margin-top: 10px;
+}
+
+#update-patient-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#update-patient-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#close-alert-update-patient {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#update-alert-patient{
+    background-color: green;
+    color: white;
+}
+
+.notification{
+    display: none;
+}
+
+@media (max-width: 1910px) {
+    .container, .main-page, .left-page, .right-page {
+        display: none;
+    }
+
+    .notification {
+        display: flex;
+        position: fixed; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #f8d7da;
+        color: #721c24;
+        text-align: center;
+        font-size: 24px;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+    }
+}
